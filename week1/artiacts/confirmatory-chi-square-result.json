@@ -1,0 +1,23 @@
+{
+  "protocol": {
+    "sample_size": 100000,
+    "categories": 12,
+    "alpha": 0.05,
+    "null_hypothesis": "Each menu item has probability 1/12.",
+    "alternative_hypothesis": "At least one menu-item probability differs from 1/12.",
+    "selection_rule": "Math.floor(Math.random() * lunchMenu.length)",
+    "rerun_policy": "One confirmatory run; do not rerun or replace based on its p-value."
+  },
+  "environment": {
+    "node": "23.7.0",
+    "scipy": "1.17.1"
+  },
+  "result": {
+    "expected_count_per_category": 8333.333333333334,
+    "chi_square_statistic": 31.47704,
+    "degrees_of_freedom": 11,
+    "p_value": 0.0009248233490457186,
+    "critical_value": 19.675137572682495,
+    "decision": "reject H0"
+  }
+}

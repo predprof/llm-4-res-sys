@@ -1,0 +1,17 @@
+{
+  "numberOfClicks": 100000,
+  "distribution": [
+    { "name": "Burger", "count": 8666, "percentage": 8.666 },
+    { "name": "Pizza", "count": 8426, "percentage": 8.426 },
+    { "name": "Tacos", "count": 8416, "percentage": 8.416 },
+    { "name": "Salad", "count": 8402, "percentage": 8.402 },
+    { "name": "Pasta", "count": 8385, "percentage": 8.385 },
+    { "name": "BBQ", "count": 8367, "percentage": 8.367 },
+    { "name": "Sushi", "count": 8326, "percentage": 8.326 },
+    { "name": "Ramen", "count": 8318, "percentage": 8.318 },
+    { "name": "Sandwich", "count": 8244, "percentage": 8.244 },
+    { "name": "Steak", "count": 8220, "percentage": 8.220 },
+    { "name": "Soup", "count": 8190, "percentage": 8.190 },
+    { "name": "Curry", "count": 8040, "percentage": 8.040 }
+  ]
+}

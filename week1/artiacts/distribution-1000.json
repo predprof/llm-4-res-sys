@@ -1,0 +1,17 @@
+{
+  "numberOfClicks": 1000,
+  "distribution": [
+    { "name": "Ramen", "count": 105, "percentage": 10.5 },
+    { "name": "Sushi", "count": 104, "percentage": 10.4 },
+    { "name": "Tacos", "count": 92, "percentage": 9.2 },
+    { "name": "Salad", "count": 87, "percentage": 8.7 },
+    { "name": "Pizza", "count": 86, "percentage": 8.6 },
+    { "name": "Sandwich", "count": 86, "percentage": 8.6 },
+    { "name": "Burger", "count": 84, "percentage": 8.4 },
+    { "name": "BBQ", "count": 82, "percentage": 8.2 },
+    { "name": "Soup", "count": 81, "percentage": 8.1 },
+    { "name": "Curry", "count": 71, "percentage": 7.1 },
+    { "name": "Steak", "count": 65, "percentage": 6.5 },
+    { "name": "Pasta", "count": 57, "percentage": 5.7 }
+  ]
+}

@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ff6b6b;
+    font-size: 2.2rem;
+}
+
+.description {
+    margin-bottom: 30px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.lunch-display {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+}
+
+.food-icon {
+    margin-bottom: 15px;
+    color: #ff6b6b;
+    font-size: 4rem;
+}
+
+.food-name {
+    margin: 10px 0;
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.generate-btn {
+    padding: 15px 40px;
+    color: white;
+    background-color: #ff6b6b;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.generate-btn:hover {
+    background-color: #ff5252;
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+    transform: translateY(-3px);
+}
+
+.generate-btn:active {
+    transform: translateY(0);
+}
+
+.generate-btn:focus-visible {
+    outline: 3px solid #333;
+    outline-offset: 4px;
+}
+
+.footer {
+    margin-top: 30px;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fade-in 0.5s ease forwards;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .food-name {
+        font-size: 1.6rem;
+    }
+
+    .generate-btn {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+}

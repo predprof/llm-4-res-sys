@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Lunch Menu Generator</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <h1><i class="fas fa-utensils" aria-hidden="true"></i> Random Lunch Generator</h1>
+        <p class="description">
+            Struggling to decide what to eat? Let us choose for you with just one click!
+        </p>
+
+        <div class="lunch-display" aria-live="polite">
+            <div class="food-icon" aria-hidden="true">
+                <i class="fas fa-question"></i>
+            </div>
+            <div class="food-name">What's for lunch?</div>
+        </div>
+
+        <button class="generate-btn" id="generateBtn" type="button">
+            <i class="fas fa-random" aria-hidden="true"></i> Generate Lunch!
+        </button>
+
+        <p class="footer">Click the button again if you can't decide!</p>
+    </main>
+</body>
+</html>
