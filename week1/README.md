@@ -1,4 +1,4 @@
-# 🍽️ Random Lunch Menu Generator
+# Random Lunch Menu Generator
 
 Tired of deciding what to eat for lunch? This web app eliminates the daily dilemma by randomly generating a lunch idea for you! Say goodbye to endless scrolling and "I don't know, what do you want?" conversations.
 
@@ -6,6 +6,8 @@ Tired of deciding what to eat for lunch? This web app eliminates the daily dilem
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
+
+**Repository:** [predprof/llm-4-res-sys](https://github.com/predprof/llm-4-res-sys/tree/main)
 
 ## ✨ Features
 
@@ -16,10 +18,7 @@ Tired of deciding what to eat for lunch? This web app eliminates the daily dilem
 
 ## 🚀 Live Demo
 
-Check out the live application hosted on GitHub Pages:  
-👉 **[LIVE DEMO](https://[your-username].github.io/[your-repository-name])** 👈
-
-*(Remember to replace `[your-username]` and `[your-repository-name]` with your actual GitHub details)*
+Check out the live application hosted on GitHub Pages: https://github.com/predprof/random-lunch-generator
 
 ## 🛠️ How It Works
 
@@ -29,16 +28,31 @@ The core logic is simple:
 3.  This function randomly selects an item from the list.
 4.  The selected item is then dynamically displayed on the webpage, often with a fun animation.
 
-## 📁 Project Structure
+## Fixed problem
 
-```
-random-lunch-generator/
-├── index.html          # The main HTML file
-├── style.css           # The CSS stylesheet for layout and design
-├── script.js           # The JavaScript file containing the logic
-├── assets/             # Folder for images/icons (optional)
-│   └── food-icons/
-└── README.md           # This file
+The original page sometimes displayed a lunch name without an icon. The selection logic was working, but three icon classes were unavailable in the loaded Font Awesome Free stylesheet:
+
+| Menu item | Original class | Replacement |
+|---|---|---|
+| Ramen | `fa-bowl-hot` | `fa-bowl-food` |
+| Pasta | `fa-pasta` | `fa-plate-wheat` |
+| Soup | `fa-bowl` | `fa-mug-hot` |
+
+The replacements are present in Font Awesome Free 6.4.0 and are defined in `script.js`.
+
+## Project structure
+
+```text
+week1/
+├── index.html                         # Page structure
+├── style.css                          # Layout, colors, responsiveness, and animation
+├── script.js                          # Lunch menu and random-selection logic
+├── README.md                          # Project documentation
+├── artiacts/                          # Experiment code, saved results, and validation notes
+└── report/
+    ├── raimova_alina_a01_report.md    # Reviewable report source
+    ├── raimova_alina_a01_report.pdf   # Rendered homework report
+    └── raimova_alina_a01_session.json # Tool-native AI session snapshot
 ```
 
 ## 🧩 Installation & Local Development
@@ -47,11 +61,11 @@ Want to run this locally or contribute? Follow these steps:
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/[your-username]/[your-repository-name].git
+    git clone https://github.com/predprof/llm-4-res-sys.git
     ```
 2.  **Navigate to the project directory**
     ```bash
-    cd [your-repository-name]
+    cd llm-4-res-sys
     ```
 3.  **Open it!**  
     Simply open the `index.html` file in your web browser. No complex build processes required!
@@ -78,20 +92,6 @@ Please feel free to add more menu items to the list in `script.js`!
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## 🙏 Acknowledgments
+## Author
 
-*   Icons provided by [Font Awesome](https://fontawesome.com/).
-*   Inspiration from the eternal question: "What do you want for lunch?"
-
----
-
-### **Next Steps for You:**
-
-1.  **Create the repo on GitHub:** Name it something like `random-lunch-generator`.
-2.  **Create the files:** `index.html`, `style.css`, and `script.js` with the basic code.
-3.  **Copy this README.md** into your project folder.
-4.  **Edit the placeholder text** in the README (especially the Live Demo link).
-5.  **Push your code** to GitHub.
-6.  **Go to your repo Settings -> Pages ->** Select source `Deploy from a branch` -> Branch `main` / `root` and click Save. Your page will be live at `https://[your-username].github.io/random-lunch-generator` in a minute.
-
-Would you like me to help you write the initial code for `index.html`, `style.css`, and `script.js` next?
+Raimova Alina — individual assignment.
