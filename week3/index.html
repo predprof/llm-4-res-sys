@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Filtering Movie Recommender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Collaborative Filtering Movie Recommender</h1>
+        <p>Predict a rating for an unseen film, or compare recommendations from similar users and similar movies.</p>
+
+        <section class="prediction-section" aria-labelledby="prediction-heading">
+            <h2 id="prediction-heading">Predict a movie rating</h2>
+            <p>Choose a user, then type a film title or movie ID and select it from the suggestions.</p>
+            <div class="prediction-controls">
+                <div class="prediction-field">
+                    <label for="prediction-user-select">User</label>
+                    <select id="prediction-user-select">
+                        <option value="" selected>Select a user</option>
+                    </select>
+                </div>
+                <div class="prediction-field">
+                    <label for="prediction-movie-input">Film</label>
+                    <div id="prediction-movie-combobox" class="movie-combobox">
+                        <input id="prediction-movie-input" type="text" inputmode="search" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="prediction-movie-list" placeholder="Type a title or ID, or choose a film" autocomplete="off" aria-describedby="prediction-search-status" disabled>
+                        <button id="prediction-movie-toggle" class="movie-combobox-toggle" type="button" aria-label="Show film options" disabled><span aria-hidden="true"></span></button>
+                        <div id="prediction-movie-list" class="movie-combobox-list" role="listbox" aria-label="Unrated films" hidden></div>
+                    </div>
+                    <span id="prediction-search-status" class="field-hint" role="status" aria-live="polite"></span>
+                </div>
+                <div class="prediction-field">
+                    <label for="prediction-method">Missing-value method</label>
+                    <select id="prediction-method">
+                        <option value="co-rated" selected>Default — co-rated only</option>
+                        <option value="user-mean">User mean imputation</option>
+                        <option value="common-weight">Weight by common ratings (no fill)</option>
+                        <option value="matrix-factorization">Matrix factorization</option>
+                    </select>
+                </div>
+            </div>
+            <p id="prediction-method-description" class="method-description"></p>
+            <button id="predict-rating-btn" type="button">Predict Rating</button>
+            <p id="prediction-status" class="status-message" role="status" aria-live="polite"></p>
+            <div id="prediction-result" class="prediction-result" hidden>
+                <h3 id="prediction-context"></h3>
+                <div class="prediction-scores">
+                    <div class="prediction-score">
+                        <h4>User-Based CF</h4>
+                        <strong id="prediction-user-score"></strong>
+                        <p id="prediction-user-evidence"></p>
+                    </div>
+                    <div class="prediction-score">
+                        <h4>Item-Based CF</h4>
+                        <strong id="prediction-item-score"></strong>
+                        <p id="prediction-item-evidence"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="recommendations-heading">Top-5 recommendations</h2>
+        <div class="controls">
+            <label for="user-select">User</label>
+            <select id="user-select">
+                <option value="" disabled selected>Select a user</option>
+            </select>
+            <label for="missing-value-method">Missing-value method</label>
+            <select id="missing-value-method" onchange="handleMethodChange()">
+                <option value="co-rated" selected>Default — co-rated only</option>
+                <option value="user-mean">User mean imputation</option>
+                <option value="common-weight">Weight by common ratings (no fill)</option>
+                <option value="matrix-factorization">Matrix factorization</option>
+            </select>
+            <p id="method-description" class="method-description">Compare only ratings both users or both films have in common. Missing values stay missing.</p>
+            <button id="recommend-btn" onclick="getRecommendations()">Get Recommendations</button>
+            <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+        </div>
+
+        <div id="result-box">
+            <div class="result-column">
+                <h2>User-Based CF</h2>
+                <div id="user-based-result"><p>Please wait, loading data...</p></div>
+                <details id="user-based-explanation" class="explanation" hidden>
+                    <summary>How were these recommendations made?</summary>
+                    <div class="explanation-content"></div>
+                </details>
+            </div>
+            <div class="result-column">
+                <h2>Item-Based CF</h2>
+                <div id="item-based-result"><p>Please wait, loading data...</p></div>
+                <details id="item-based-explanation" class="explanation" hidden>
+                    <summary>How were these recommendations made?</summary>
+                    <div class="explanation-content"></div>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
