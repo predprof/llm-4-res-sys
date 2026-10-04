@@ -1,0 +1,313 @@
+{
+  "generatedAt": "2026-09-20T13:14:43.195Z",
+  "hypothesis": {
+    "claim": "Movies with more genre tags automatically score higher under cosine and make Top-5 mainstream.",
+    "controlledResult": "For a fixed number of shared genres, adding unmatched tags increases the candidate norm and lowers cosine similarity.",
+    "oneSharedGenreFormula": "score = 1 / sqrt(queryGenreCount * candidateGenreCount)"
+  },
+  "protocol": {
+    "evaluatedUsers": 917,
+    "topK": 5,
+    "popularityProxy": "Full MovieLens u.data rating count for each movie",
+    "highVisibilityDefinition": "Top catalog quartile by rating count (at least 80 ratings)",
+    "unusualPreferenceProxy": "Lowest mean rating count across the three profile-input movies among all eligible users",
+    "empiricalScoreTest": "Pearson correlation between movie genre count and cosine score over every catalog movie for every eligible-user model"
+  },
+  "catalogBaseline": {
+    "movieCount": 1682,
+    "meanRatingCount": 59.45303210463734,
+    "medianRatingCount": 27,
+    "topQuartileRatingCountThreshold": 80,
+    "topPopularityQuartileShare": 0.25089179548156954,
+    "meanGenreCount": 1.7187871581450653
+  },
+  "empiricalScoreGenreCorrelation": {
+    "itemToItemPearson": 0.002692836364676745,
+    "profileBasedPearson": 0.037270488991057865
+  },
+  "recommendationExposure": {
+    "itemToItem": {
+      "recommendationOccurrences": 4585,
+      "distinctRecommendedMovies": 505,
+      "meanRatingCount": 71.24383860414395,
+      "medianRatingCount": 40,
+      "topPopularityQuartileShare": 0.32998909487459105,
+      "meanGenreCount": 2.102071973827699,
+      "scoreGenreCountPearson": -0.35303654808528473,
+      "recommendationFrequencyRatingCountPearson": 0.03980850690175808,
+      "recommendationFrequencyGenreCountPearson": 0.11958188796472681
+    },
+    "profileBased": {
+      "recommendationOccurrences": 4585,
+      "distinctRecommendedMovies": 463,
+      "meanRatingCount": 88.73827699018538,
+      "medianRatingCount": 57,
+      "topPopularityQuartileShare": 0.4257360959651036,
+      "meanGenreCount": 2.731515812431843,
+      "scoreGenreCountPearson": -0.280623798960817,
+      "recommendationFrequencyRatingCountPearson": 0.10518300372495148,
+      "recommendationFrequencyGenreCountPearson": 0.3361253146004034
+    }
+  },
+  "caseStudies": {
+    "user1": {
+      "selection": "Existing report case study",
+      "userId": 1,
+      "target": {
+        "title": "Delicatessen (1991)",
+        "ratingCount": 65,
+        "popularityPercentile": 70.33
+      },
+      "profileInputMeanRatingCount": 156.66666666666666,
+      "profileInputs": [
+        {
+          "title": "Truth About Cats & Dogs, The (1996)",
+          "userRating": 5,
+          "ratingCount": 272,
+          "popularityPercentile": 96.91,
+          "genreCount": 2
+        },
+        {
+          "title": "Kolya (1996)",
+          "userRating": 5,
+          "ratingCount": 117,
+          "popularityPercentile": 82.94,
+          "genreCount": 1
+        },
+        {
+          "title": "Crumb (1994)",
+          "userRating": 5,
+          "ratingCount": 81,
+          "popularityPercentile": 75.68,
+          "genreCount": 1
+        }
+      ],
+      "itemToItemTop5": [
+        {
+          "id": 535,
+          "title": "Addicted to Love (1997)",
+          "score": 1,
+          "ratingCount": 54,
+          "popularityPercentile": 66.11,
+          "releaseYear": 1997,
+          "genreCount": 2
+        },
+        {
+          "id": 514,
+          "title": "Annie Hall (1977)",
+          "score": 1,
+          "ratingCount": 180,
+          "popularityPercentile": 91.85,
+          "releaseYear": 1977,
+          "genreCount": 2
+        },
+        {
+          "id": 702,
+          "title": "Barcelona (1994)",
+          "score": 1,
+          "ratingCount": 53,
+          "popularityPercentile": 65.76,
+          "releaseYear": 1994,
+          "genreCount": 2
+        },
+        {
+          "id": 988,
+          "title": "Beautician and the Beast, The (1997)",
+          "score": 1,
+          "ratingCount": 86,
+          "popularityPercentile": 76.99,
+          "releaseYear": 1997,
+          "genreCount": 2
+        },
+        {
+          "id": 747,
+          "title": "Benny & Joon (1993)",
+          "score": 1,
+          "ratingCount": 102,
+          "popularityPercentile": 80.8,
+          "releaseYear": 1993,
+          "genreCount": 2
+        }
+      ],
+      "itemToItemTopPopularityQuartileCount": 3,
+      "profileBasedTop5": [
+        {
+          "id": 535,
+          "title": "Addicted to Love (1997)",
+          "score": 0.866025,
+          "ratingCount": 54,
+          "popularityPercentile": 66.11,
+          "releaseYear": 1997,
+          "genreCount": 2
+        },
+        {
+          "id": 514,
+          "title": "Annie Hall (1977)",
+          "score": 0.866025,
+          "ratingCount": 180,
+          "popularityPercentile": 91.85,
+          "releaseYear": 1977,
+          "genreCount": 2
+        },
+        {
+          "id": 702,
+          "title": "Barcelona (1994)",
+          "score": 0.866025,
+          "ratingCount": 53,
+          "popularityPercentile": 65.76,
+          "releaseYear": 1994,
+          "genreCount": 2
+        },
+        {
+          "id": 988,
+          "title": "Beautician and the Beast, The (1997)",
+          "score": 0.866025,
+          "ratingCount": 86,
+          "popularityPercentile": 76.99,
+          "releaseYear": 1997,
+          "genreCount": 2
+        },
+        {
+          "id": 747,
+          "title": "Benny & Joon (1993)",
+          "score": 0.866025,
+          "ratingCount": 102,
+          "popularityPercentile": 80.8,
+          "releaseYear": 1993,
+          "genreCount": 2
+        }
+      ],
+      "profileBasedTopPopularityQuartileCount": 3
+    },
+    "lowestPopularityProfileInputs": {
+      "selection": "Eligible user with the lowest mean full-dataset rating count across the three profile inputs",
+      "userId": 707,
+      "target": {
+        "title": "Big Lebowski, The (1998)",
+        "ratingCount": 42,
+        "popularityPercentile": 59.69
+      },
+      "profileInputMeanRatingCount": 9,
+      "profileInputs": [
+        {
+          "title": "Mrs. Dalloway (1997)",
+          "userRating": 5,
+          "ratingCount": 15,
+          "popularityPercentile": 39.95,
+          "genreCount": 1
+        },
+        {
+          "title": "Reckless (1995)",
+          "userRating": 5,
+          "ratingCount": 8,
+          "popularityPercentile": 29.55,
+          "genreCount": 1
+        },
+        {
+          "title": "Lamerica (1994)",
+          "userRating": 5,
+          "ratingCount": 4,
+          "popularityPercentile": 19.8,
+          "genreCount": 1
+        }
+      ],
+      "itemToItemTop5": [
+        {
+          "id": 1353,
+          "title": "1-900 (1994)",
+          "score": 1,
+          "ratingCount": 5,
+          "popularityPercentile": 22.83,
+          "releaseYear": 1994,
+          "genreCount": 1
+        },
+        {
+          "id": 966,
+          "title": "Affair to Remember, An (1957)",
+          "score": 1,
+          "ratingCount": 26,
+          "popularityPercentile": 49.82,
+          "releaseYear": 1957,
+          "genreCount": 1
+        },
+        {
+          "id": 918,
+          "title": "City of Angels (1998)",
+          "score": 1,
+          "ratingCount": 8,
+          "popularityPercentile": 29.55,
+          "releaseYear": 1998,
+          "genreCount": 1
+        },
+        {
+          "id": 1096,
+          "title": "Commandments (1997)",
+          "score": 1,
+          "ratingCount": 3,
+          "popularityPercentile": 15.99,
+          "releaseYear": 1997,
+          "genreCount": 1
+        },
+        {
+          "id": 1340,
+          "title": "Crude Oasis, The (1995)",
+          "score": 1,
+          "ratingCount": 1,
+          "popularityPercentile": 8.38,
+          "releaseYear": 1995,
+          "genreCount": 1
+        }
+      ],
+      "itemToItemTopPopularityQuartileCount": 0,
+      "profileBasedTop5": [
+        {
+          "id": 731,
+          "title": "Corrina, Corrina (1994)",
+          "score": 1,
+          "ratingCount": 39,
+          "popularityPercentile": 57.91,
+          "releaseYear": 1994,
+          "genreCount": 3
+        },
+        {
+          "id": 1424,
+          "title": "I Like It Like That (1994)",
+          "score": 1,
+          "ratingCount": 3,
+          "popularityPercentile": 15.99,
+          "releaseYear": 1994,
+          "genreCount": 3
+        },
+        {
+          "id": 775,
+          "title": "Something to Talk About (1995)",
+          "score": 1,
+          "ratingCount": 26,
+          "popularityPercentile": 49.82,
+          "releaseYear": 1995,
+          "genreCount": 3
+        },
+        {
+          "id": 1115,
+          "title": "Twelfth Night (1996)",
+          "score": 1,
+          "ratingCount": 29,
+          "popularityPercentile": 52.08,
+          "releaseYear": 1996,
+          "genreCount": 3
+        },
+        {
+          "id": 1100,
+          "title": "What Happened Was... (1994)",
+          "score": 1,
+          "ratingCount": 8,
+          "popularityPercentile": 29.55,
+          "releaseYear": 1994,
+          "genreCount": 3
+        }
+      ],
+      "profileBasedTopPopularityQuartileCount": 0
+    }
+  },
+  "interpretationBoundary": "Rating count is not an input to either recommender. Association between popularity and recommendation exposure cannot establish that the model is directly scoring popularity."
+}

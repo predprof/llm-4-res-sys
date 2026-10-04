@@ -1,0 +1,170 @@
+{
+  "generatedAt": "2026-09-20T13:14:54.172Z",
+  "overlapCheck": {
+    "definition": "Watched means the history visible to the recommender; the held-out target is intentionally not part of training.",
+    "comparisonMode": {
+      "users": 917,
+      "recommendationOccurrences": 9170,
+      "violations": 0,
+      "passed": true
+    },
+    "standardProfileMode": {
+      "users": 943,
+      "recommendationOccurrences": 4715,
+      "violations": 0,
+      "passed": true
+    }
+  },
+  "distributionCheck": {
+    "case": "User 1 shared profile/single-item Top-5",
+    "popularityProxy": "Full u.data rating count",
+    "highVisibilityThreshold": 80,
+    "movies": [
+      {
+        "id": 535,
+        "title": "Addicted to Love (1997)",
+        "ratingCount": 54,
+        "releaseYear": 1997,
+        "highVisibility": false
+      },
+      {
+        "id": 514,
+        "title": "Annie Hall (1977)",
+        "ratingCount": 180,
+        "releaseYear": 1977,
+        "highVisibility": true
+      },
+      {
+        "id": 702,
+        "title": "Barcelona (1994)",
+        "ratingCount": 53,
+        "releaseYear": 1994,
+        "highVisibility": false
+      },
+      {
+        "id": 988,
+        "title": "Beautician and the Beast, The (1997)",
+        "ratingCount": 86,
+        "releaseYear": 1997,
+        "highVisibility": true
+      },
+      {
+        "id": 747,
+        "title": "Benny & Joon (1993)",
+        "ratingCount": 102,
+        "releaseYear": 1993,
+        "highVisibility": true
+      }
+    ],
+    "allHighVisibility": false,
+    "highVisibilityCount": 3
+  },
+  "formulaCheck": {
+    "section3Formula": "cosine(x,y) = dot(x,y) / (norm(x) * norm(y))",
+    "binaryExample": {
+      "rawDotProduct": 1,
+      "firstMagnitude": 1.4142135623730951,
+      "secondMagnitude": 1.4142135623730951,
+      "implementationResult": 0.5,
+      "expectedNormalizedResult": 0.5
+    },
+    "profileExample": {
+      "rawDotProduct": 1,
+      "profileMagnitude": 1.4142135623730951,
+      "candidateMagnitude": 1.4142135623730951,
+      "implementationResult": 0.4999999999999999,
+      "expectedNormalizedResult": 0.5
+    },
+    "passed": true
+  },
+  "methodSanityCheck": {
+    "queryMovie": "Toy Story (1995)",
+    "top2": {
+      "cosine": [
+        {
+          "title": "Aladdin and the King of Thieves (1996)",
+          "score": 1
+        },
+        {
+          "title": "Aladdin (1992)",
+          "score": 0.866025
+        }
+      ],
+      "jaccard": [
+        {
+          "title": "Aladdin and the King of Thieves (1996)",
+          "score": 1
+        },
+        {
+          "title": "Aladdin (1992)",
+          "score": 0.75
+        }
+      ]
+    }
+  },
+  "standardProfileSanityCheck": {
+    "userId": 1,
+    "profileInputs": [
+      {
+        "title": "Truth About Cats & Dogs, The (1996)",
+        "rating": 5,
+        "genres": [
+          "Comedy",
+          "Romance"
+        ]
+      },
+      {
+        "title": "Delicatessen (1991)",
+        "rating": 5,
+        "genres": [
+          "Comedy",
+          "Sci-Fi"
+        ]
+      },
+      {
+        "title": "Kolya (1996)",
+        "rating": 5,
+        "genres": [
+          "Comedy"
+        ]
+      }
+    ],
+    "top5": [
+      {
+        "title": "8 Heads in a Duffel Bag (1997)",
+        "score": 0.904534,
+        "genres": [
+          "Comedy"
+        ]
+      },
+      {
+        "title": "A Chef in Love (1996)",
+        "score": 0.904534,
+        "genres": [
+          "Comedy"
+        ]
+      },
+      {
+        "title": "Ace Ventura: When Nature Calls (1995)",
+        "score": 0.904534,
+        "genres": [
+          "Comedy"
+        ]
+      },
+      {
+        "title": "Addams Family Values (1993)",
+        "score": 0.904534,
+        "genres": [
+          "Comedy"
+        ]
+      },
+      {
+        "title": "Air Up There, The (1994)",
+        "score": 0.904534,
+        "genres": [
+          "Comedy"
+        ]
+      }
+    ]
+  }
+}

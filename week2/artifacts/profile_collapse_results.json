@@ -1,0 +1,342 @@
+{
+  "generatedAt": "2026-09-20T13:14:47.109Z",
+  "hypothesis": {
+    "claim": "Averaging very different movie vectors creates a centroid that matches none of the inputs and yields generic Top-5 recommendations.",
+    "proposedTestLimitation": "Comparing profile-to-input similarity with each movie self-similarity of 1 flags ordinary averaging whenever the input vectors are not identical; it is not sufficient evidence of washout.",
+    "strongerDiagnostic": "A recommendation is centroid-preferred when its profile score is greater than its cosine similarity to every individual profile movie."
+  },
+  "protocol": {
+    "evaluatedUsers": 917,
+    "profileSize": 3,
+    "topK": 5,
+    "diversityMeasure": "Mean of the three pairwise cosine similarities among profile-input movies; lower means more diverse",
+    "mostDiverseSelection": "Lowest mean pairwise input similarity, then smallest user ID",
+    "quartileComparison": "Fixed-size lowest and highest coherence quartiles after sorting; user ID breaks ties"
+  },
+  "aggregate": {
+    "meanPairwiseInputSimilarity": 0.3196294281706172,
+    "meanProfileToInputSimilarity": 0.7254243972499619,
+    "medianProfileToInputSimilarity": 0.7559289460184543,
+    "allThreeBelowSelfSimilarityUsers": 902,
+    "allThreeBelowSelfSimilarityFraction": 0.9836423118865867,
+    "centroidPreferredRecommendationShare": 0.4737186477644493,
+    "meanCentroidAdvantage": 0.002844969573778679,
+    "usersWithUnrepresentedProfileInput": 93,
+    "usersWithUnrepresentedProfileInputFraction": 0.10141766630316248,
+    "profileHitsAt5": 10,
+    "profileHitRateAt5": 0.010905125408942203
+  },
+  "coherenceQuartiles": {
+    "lowest": {
+      "users": 230,
+      "meanInputPairwiseSimilarity": 0.07509270541971837,
+      "meanProfileToInputSimilarity": 0.6082848968039037,
+      "centroidPreferredRecommendationShare": 0.47130434782608693,
+      "meanCentroidAdvantage": -0.009545186845557411,
+      "usersWithUnrepresentedProfileInput": 57,
+      "usersWithUnrepresentedProfileInputFraction": 0.24782608695652175,
+      "profileHitsAt5": 3,
+      "profileHitRateAt5": 0.013043478260869565
+    },
+    "highest": {
+      "users": 230,
+      "meanInputPairwiseSimilarity": 0.6484648159632592,
+      "meanProfileToInputSimilarity": 0.8705897624823091,
+      "centroidPreferredRecommendationShare": 0.16260869565217392,
+      "meanCentroidAdvantage": -0.053574094561037545,
+      "usersWithUnrepresentedProfileInput": 0,
+      "usersWithUnrepresentedProfileInputFraction": 0,
+      "profileHitsAt5": 5,
+      "profileHitRateAt5": 0.021739130434782608
+    }
+  },
+  "caseStudies": {
+    "user1": {
+      "selection": "Existing report case study",
+      "userId": 1,
+      "meanPairwiseInputSimilarity": 0.235702,
+      "pairwiseInputSimilarities": [
+        0.707107,
+        0,
+        0
+      ],
+      "profileInputs": [
+        {
+          "title": "Truth About Cats & Dogs, The (1996)",
+          "userRating": 5,
+          "genres": [
+            "Comedy",
+            "Romance"
+          ],
+          "similarityToAveragedProfile": 0.866025,
+          "maximumSimilarityFromProfileTop5": 1,
+          "representedInProfileTop5": true
+        },
+        {
+          "title": "Kolya (1996)",
+          "userRating": 5,
+          "genres": [
+            "Comedy"
+          ],
+          "similarityToAveragedProfile": 0.816497,
+          "maximumSimilarityFromProfileTop5": 0.707107,
+          "representedInProfileTop5": true
+        },
+        {
+          "title": "Crumb (1994)",
+          "userRating": 5,
+          "genres": [
+            "Documentary"
+          ],
+          "similarityToAveragedProfile": 0.408248,
+          "maximumSimilarityFromProfileTop5": 0,
+          "representedInProfileTop5": false
+        }
+      ],
+      "profileTop5": [
+        {
+          "rank": 1,
+          "title": "Addicted to Love (1997)",
+          "genres": [
+            "Comedy",
+            "Romance"
+          ],
+          "profileScore": 0.866025,
+          "individualInputScores": [
+            1,
+            0.707107,
+            0
+          ],
+          "maxIndividualScore": 1,
+          "bestMatchingInput": "Truth About Cats & Dogs, The (1996)",
+          "centroidAdvantage": -0.133975,
+          "centroidPreferredOverEveryInput": false
+        },
+        {
+          "rank": 2,
+          "title": "Annie Hall (1977)",
+          "genres": [
+            "Comedy",
+            "Romance"
+          ],
+          "profileScore": 0.866025,
+          "individualInputScores": [
+            1,
+            0.707107,
+            0
+          ],
+          "maxIndividualScore": 1,
+          "bestMatchingInput": "Truth About Cats & Dogs, The (1996)",
+          "centroidAdvantage": -0.133975,
+          "centroidPreferredOverEveryInput": false
+        },
+        {
+          "rank": 3,
+          "title": "Barcelona (1994)",
+          "genres": [
+            "Comedy",
+            "Romance"
+          ],
+          "profileScore": 0.866025,
+          "individualInputScores": [
+            1,
+            0.707107,
+            0
+          ],
+          "maxIndividualScore": 1,
+          "bestMatchingInput": "Truth About Cats & Dogs, The (1996)",
+          "centroidAdvantage": -0.133975,
+          "centroidPreferredOverEveryInput": false
+        },
+        {
+          "rank": 4,
+          "title": "Beautician and the Beast, The (1997)",
+          "genres": [
+            "Comedy",
+            "Romance"
+          ],
+          "profileScore": 0.866025,
+          "individualInputScores": [
+            1,
+            0.707107,
+            0
+          ],
+          "maxIndividualScore": 1,
+          "bestMatchingInput": "Truth About Cats & Dogs, The (1996)",
+          "centroidAdvantage": -0.133975,
+          "centroidPreferredOverEveryInput": false
+        },
+        {
+          "rank": 5,
+          "title": "Benny & Joon (1993)",
+          "genres": [
+            "Comedy",
+            "Romance"
+          ],
+          "profileScore": 0.866025,
+          "individualInputScores": [
+            1,
+            0.707107,
+            0
+          ],
+          "maxIndividualScore": 1,
+          "bestMatchingInput": "Truth About Cats & Dogs, The (1996)",
+          "centroidAdvantage": -0.133975,
+          "centroidPreferredOverEveryInput": false
+        }
+      ],
+      "centroidPreferredTop5Count": 0,
+      "unrepresentedProfileInputCount": 1,
+      "profileHitAt5": false
+    },
+    "mostDiverse": {
+      "selection": "Eligible user with the lowest mean pairwise similarity among the three profile inputs; user ID breaks ties",
+      "userId": 3,
+      "meanPairwiseInputSimilarity": 0,
+      "pairwiseInputSimilarities": [
+        0,
+        0,
+        0
+      ],
+      "profileInputs": [
+        {
+          "title": "Mother (1996)",
+          "userRating": 5,
+          "genres": [
+            "Comedy"
+          ],
+          "similarityToAveragedProfile": 0.408248,
+          "maximumSimilarityFromProfileTop5": 0.57735,
+          "representedInProfileTop5": true
+        },
+        {
+          "title": "Conspiracy Theory (1997)",
+          "userRating": 5,
+          "genres": [
+            "Action",
+            "Mystery",
+            "Romance",
+            "Thriller"
+          ],
+          "similarityToAveragedProfile": 0.816497,
+          "maximumSimilarityFromProfileTop5": 0.894427,
+          "representedInProfileTop5": true
+        },
+        {
+          "title": "Boogie Nights (1997)",
+          "userRating": 5,
+          "genres": [
+            "Drama"
+          ],
+          "similarityToAveragedProfile": 0.408248,
+          "maximumSimilarityFromProfileTop5": 0.57735,
+          "representedInProfileTop5": true
+        }
+      ],
+      "profileTop5": [
+        {
+          "rank": 1,
+          "title": "Diva (1981)",
+          "genres": [
+            "Action",
+            "Drama",
+            "Mystery",
+            "Romance",
+            "Thriller"
+          ],
+          "profileScore": 0.912871,
+          "individualInputScores": [
+            0,
+            0.894427,
+            0.447214
+          ],
+          "maxIndividualScore": 0.894427,
+          "bestMatchingInput": "Conspiracy Theory (1997)",
+          "centroidAdvantage": 0.018444,
+          "centroidPreferredOverEveryInput": true
+        },
+        {
+          "rank": 2,
+          "title": "Charade (1963)",
+          "genres": [
+            "Comedy",
+            "Mystery",
+            "Romance",
+            "Thriller"
+          ],
+          "profileScore": 0.816497,
+          "individualInputScores": [
+            0.5,
+            0.75,
+            0
+          ],
+          "maxIndividualScore": 0.75,
+          "bestMatchingInput": "Conspiracy Theory (1997)",
+          "centroidAdvantage": 0.066497,
+          "centroidPreferredOverEveryInput": true
+        },
+        {
+          "rank": 3,
+          "title": "American President, The (1995)",
+          "genres": [
+            "Comedy",
+            "Drama",
+            "Romance"
+          ],
+          "profileScore": 0.707107,
+          "individualInputScores": [
+            0.57735,
+            0.288675,
+            0.57735
+          ],
+          "maxIndividualScore": 0.57735,
+          "bestMatchingInput": "Mother (1996)",
+          "centroidAdvantage": 0.129757,
+          "centroidPreferredOverEveryInput": true
+        },
+        {
+          "rank": 4,
+          "title": "Apollo 13 (1995)",
+          "genres": [
+            "Action",
+            "Drama",
+            "Thriller"
+          ],
+          "profileScore": 0.707107,
+          "individualInputScores": [
+            0,
+            0.57735,
+            0.57735
+          ],
+          "maxIndividualScore": 0.57735,
+          "bestMatchingInput": "Conspiracy Theory (1997)",
+          "centroidAdvantage": 0.129757,
+          "centroidPreferredOverEveryInput": true
+        },
+        {
+          "rank": 5,
+          "title": "Arsenic and Old Lace (1944)",
+          "genres": [
+            "Comedy",
+            "Mystery",
+            "Thriller"
+          ],
+          "profileScore": 0.707107,
+          "individualInputScores": [
+            0.57735,
+            0.57735,
+            0
+          ],
+          "maxIndividualScore": 0.57735,
+          "bestMatchingInput": "Mother (1996)",
+          "centroidAdvantage": 0.129757,
+          "centroidPreferredOverEveryInput": true
+        }
+      ],
+      "centroidPreferredTop5Count": 5,
+      "unrepresentedProfileInputCount": 0,
+      "profileHitAt5": false
+    }
+  },
+  "interpretationBoundary": "The diagnostic detects hybrid centroid matches in genre space. The genre-only data cannot determine whether a movie is semantically generic or whether the user experiences the recommendation as unpersonalized."
+}

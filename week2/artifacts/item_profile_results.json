@@ -1,0 +1,162 @@
+{
+  "generatedAt": "2026-09-20T13:14:38.315Z",
+  "environment": {
+    "node": "v23.7.0",
+    "dependencies": "Node.js standard library only",
+    "randomness": "None; deterministic ordering and tie-breaking"
+  },
+  "dataset": {
+    "movies": 1682,
+    "ratings": 100000,
+    "users": 943
+  },
+  "protocol": {
+    "topK": 5,
+    "profileSize": 3,
+    "heldOutRating": 5,
+    "testItem": "Latest 5-star rating after at least three earlier ratings",
+    "trainingData": "Ratings ordered before the held-out item",
+    "activeItem": "Highest-rated training item; newest timestamp breaks ties",
+    "profile": "Mean of binary genre vectors for the top three training ratings",
+    "candidates": "All movies absent from the training history",
+    "scoring": "Cosine similarity for both methods",
+    "tieBreak": "Title ascending, then movie ID ascending"
+  },
+  "metrics": {
+    "evaluatedUsers": 917,
+    "itemToItem": {
+      "hitsAt5": 13,
+      "hitRateAt5": 0.014176663031624863,
+      "mrrAt5": 0.00826972010178117,
+      "ndcgAt5": 0.009764880667785414,
+      "catalogCoverageCount": 505,
+      "catalogCoverageFraction": 0.30023781212841855
+    },
+    "profileBased": {
+      "hitsAt5": 10,
+      "hitRateAt5": 0.010905125408942203,
+      "mrrAt5": 0.005070883315158124,
+      "ndcgAt5": 0.0065062613737027165,
+      "catalogCoverageCount": 463,
+      "catalogCoverageFraction": 0.27526753864447084
+    },
+    "comparison": {
+      "meanOverlapCountAt5": 0.9781897491821155,
+      "meanOverlapFractionAt5": 0.19563794983642308,
+      "identicalTop5Users": 102,
+      "identicalTop5Fraction": 0.11123227917121047
+    }
+  },
+  "caseStudyUser1": {
+    "trainingCount": 267,
+    "heldOutTarget": {
+      "id": 171,
+      "title": "Delicatessen (1991)",
+      "rating": 5,
+      "timestamp": 889751711
+    },
+    "activeItem": {
+      "id": 111,
+      "title": "Truth About Cats & Dogs, The (1996)",
+      "rating": 5,
+      "timestamp": 889751711
+    },
+    "profileItems": [
+      {
+        "id": 111,
+        "title": "Truth About Cats & Dogs, The (1996)",
+        "rating": 5,
+        "timestamp": 889751711
+      },
+      {
+        "id": 242,
+        "title": "Kolya (1996)",
+        "rating": 5,
+        "timestamp": 889751633
+      },
+      {
+        "id": 32,
+        "title": "Crumb (1994)",
+        "rating": 5,
+        "timestamp": 888732909
+      }
+    ],
+    "itemToItemTop5": [
+      {
+        "id": 535,
+        "title": "Addicted to Love (1997)",
+        "score": 1,
+        "isHeldOutTarget": false
+      },
+      {
+        "id": 514,
+        "title": "Annie Hall (1977)",
+        "score": 1,
+        "isHeldOutTarget": false
+      },
+      {
+        "id": 702,
+        "title": "Barcelona (1994)",
+        "score": 1,
+        "isHeldOutTarget": false
+      },
+      {
+        "id": 988,
+        "title": "Beautician and the Beast, The (1997)",
+        "score": 1,
+        "isHeldOutTarget": false
+      },
+      {
+        "id": 747,
+        "title": "Benny & Joon (1993)",
+        "score": 1,
+        "isHeldOutTarget": false
+      }
+    ],
+    "profileBasedTop5": [
+      {
+        "id": 535,
+        "title": "Addicted to Love (1997)",
+        "score": 0.866025,
+        "isHeldOutTarget": false
+      },
+      {
+        "id": 514,
+        "title": "Annie Hall (1977)",
+        "score": 0.866025,
+        "isHeldOutTarget": false
+      },
+      {
+        "id": 702,
+        "title": "Barcelona (1994)",
+        "score": 0.866025,
+        "isHeldOutTarget": false
+      },
+      {
+        "id": 988,
+        "title": "Beautician and the Beast, The (1997)",
+        "score": 0.866025,
+        "isHeldOutTarget": false
+      },
+      {
+        "id": 747,
+        "title": "Benny & Joon (1993)",
+        "score": 0.866025,
+        "isHeldOutTarget": false
+      }
+    ],
+    "targetEvaluation": {
+      "itemToItem": {
+        "cosineSimilarity": 0.5,
+        "positiveSimilarityRank": 340,
+        "hitAt5": false
+      },
+      "profileBased": {
+        "cosineSimilarity": 0.57735,
+        "positiveSimilarityRank": 297,
+        "hitAt5": false
+      }
+    },
+    "overlapCountAt5": 5
+  }
+}
