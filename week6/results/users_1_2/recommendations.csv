@@ -1,0 +1,81 @@
+user_id,method,alpha,rank,movie_id,title,genres,score,training_popularity,held_out_test_rating
+1,popularity,,1,100,Fargo (1996),Crime;Drama;Thriller,377,377,5
+1,popularity,,2,258,Contact (1997),Drama;Sci-Fi,307,307,5
+1,popularity,,3,286,"English Patient, The (1996)",Drama;Romance;War,279,279,unknown
+1,popularity,,4,300,Air Force One (1997),Action;Thriller,235,235,unknown
+1,popularity,,5,288,Scream (1996),Horror;Thriller,226,226,unknown
+1,popularity,,6,318,Schindler's List (1993),Drama;War,224,224,unknown
+1,popularity,,7,313,Titanic (1997),Action;Drama;Romance,219,219,unknown
+1,popularity,,8,302,L.A. Confidential (1997),Crime;Film-Noir;Mystery;Thriller,202,202,unknown
+1,popularity,,9,357,One Flew Over the Cuckoo's Nest (1975),Drama,202,202,unknown
+1,popularity,,10,483,Casablanca (1942),Drama;Romance;War,197,197,unknown
+2,popularity,,1,181,Return of the Jedi (1983),Action;Adventure;Romance;Sci-Fi;War,339,339,unknown
+2,popularity,,2,174,Raiders of the Lost Ark (1981),Action;Adventure,312,312,unknown
+2,popularity,,3,98,"Silence of the Lambs, The (1991)",Drama;Thriller,308,308,unknown
+2,popularity,,4,56,Pulp Fiction (1994),Crime;Drama,263,263,unknown
+2,popularity,,5,172,"Empire Strikes Back, The (1980)",Action;Adventure;Drama;Romance;Sci-Fi;War,261,261,unknown
+2,popularity,,6,7,Twelve Monkeys (1995),Drama;Sci-Fi,234,234,unknown
+2,popularity,,7,79,"Fugitive, The (1993)",Action;Thriller,230,230,unknown
+2,popularity,,8,64,"Shawshank Redemption, The (1994)",Drama,228,228,unknown
+2,popularity,,9,318,Schindler's List (1993),Drama;War,224,224,unknown
+2,popularity,,10,173,"Princess Bride, The (1987)",Action;Adventure;Comedy;Romance,222,222,unknown
+1,pagerank,0.50,1,258,Contact (1997),Drama;Sci-Fi,0.0023751852568238974,307,5
+1,pagerank,0.50,2,286,"English Patient, The (1996)",Drama;Romance;War,0.002291251439601183,279,unknown
+1,pagerank,0.50,3,100,Fargo (1996),Crime;Drama;Thriller,0.0022716945968568325,377,5
+1,pagerank,0.50,4,313,Titanic (1997),Action;Drama;Romance,0.0020634252578020096,219,unknown
+1,pagerank,0.50,5,300,Air Force One (1997),Action;Thriller,0.0020034185145050287,235,unknown
+1,pagerank,0.50,6,288,Scream (1996),Horror;Thriller,0.001868372317403555,226,unknown
+1,pagerank,0.50,7,302,L.A. Confidential (1997),Crime;Film-Noir;Mystery;Thriller,0.0017981327837333083,202,unknown
+1,pagerank,0.50,8,294,Liar Liar (1997),Comedy,0.0014883459080010653,182,unknown
+1,pagerank,0.50,9,275,Sense and Sensibility (1995),Drama;Romance,0.001215864671394229,178,unknown
+1,pagerank,0.50,10,222,Star Trek: First Contact (1996),Action;Adventure;Sci-Fi,0.001192816416732967,189,4
+2,pagerank,0.50,1,181,Return of the Jedi (1983),Action;Adventure;Romance;Sci-Fi;War,0.0019889394752681255,339,unknown
+2,pagerank,0.50,2,174,Raiders of the Lost Ark (1981),Action;Adventure,0.0015527255600318313,312,unknown
+2,pagerank,0.50,3,98,"Silence of the Lambs, The (1991)",Drama;Thriller,0.0015255430480465293,308,unknown
+2,pagerank,0.50,4,7,Twelve Monkeys (1995),Drama;Sci-Fi,0.0013737741392105818,234,unknown
+2,pagerank,0.50,5,56,Pulp Fiction (1994),Crime;Drama,0.0013726179022341967,263,unknown
+2,pagerank,0.50,6,172,"Empire Strikes Back, The (1980)",Action;Adventure;Drama;Romance;Sci-Fi;War,0.001318297814577818,261,unknown
+2,pagerank,0.50,7,117,"Rock, The (1996)",Action;Adventure;Thriller,0.001308003207668662,215,unknown
+2,pagerank,0.50,8,121,Independence Day (ID4) (1996),Action;Sci-Fi;War,0.0012972885742783546,207,unknown
+2,pagerank,0.50,9,268,Chasing Amy (1997),Drama;Romance,0.0012656078906729817,146,unknown
+2,pagerank,0.50,10,222,Star Trek: First Contact (1996),Action;Adventure;Sci-Fi,0.001192816416732967,189,unknown
+1,ppr,0.50,1,100,Fargo (1996),Crime;Drama;Thriller,0.0006855214014649391,377,5
+1,ppr,0.50,2,258,Contact (1997),Drama;Sci-Fi,0.00043986731907352805,307,5
+1,ppr,0.50,3,286,"English Patient, The (1996)",Drama;Romance;War,0.0004310201038606465,279,unknown
+1,ppr,0.50,4,318,Schindler's List (1993),Drama;War,0.000403817743062973,224,unknown
+1,ppr,0.50,5,357,One Flew Over the Cuckoo's Nest (1975),Drama,0.00037716736551374197,202,unknown
+1,ppr,0.50,6,483,Casablanca (1942),Drama;Romance;War,0.000359690428012982,197,unknown
+1,ppr,0.50,7,222,Star Trek: First Contact (1996),Action;Adventure;Sci-Fi,0.00033278638147749007,189,4
+1,ppr,0.50,8,475,Trainspotting (1996),Drama,0.0003280910896137357,164,unknown
+1,ppr,0.50,9,275,Sense and Sensibility (1995),Drama;Romance,0.00032018584897741675,178,unknown
+1,ppr,0.50,10,423,E.T. the Extra-Terrestrial (1982),Children's;Drama;Fantasy;Sci-Fi,0.0003056690620724112,167,unknown
+2,ppr,0.50,1,181,Return of the Jedi (1983),Action;Adventure;Romance;Sci-Fi;War,0.0006973389536142349,339,unknown
+2,ppr,0.50,2,9,Dead Man Walking (1995),Drama,0.0004976633936166763,182,unknown
+2,ppr,0.50,3,7,Twelve Monkeys (1995),Drama;Sci-Fi,0.0004743739846162498,234,unknown
+2,ppr,0.50,4,117,"Rock, The (1996)",Action;Adventure;Thriller,0.00045636159484274685,215,unknown
+2,ppr,0.50,5,98,"Silence of the Lambs, The (1991)",Drama;Thriller,0.0004465100937522948,308,unknown
+2,ppr,0.50,6,121,Independence Day (ID4) (1996),Action;Sci-Fi;War,0.000430712359957397,207,unknown
+2,ppr,0.50,7,174,Raiders of the Lost Ark (1981),Action;Adventure,0.00040285088471136987,312,unknown
+2,ppr,0.50,8,268,Chasing Amy (1997),Drama;Romance,0.00040181088843382895,146,unknown
+2,ppr,0.50,9,475,Trainspotting (1996),Drama,0.0004016052698716521,164,unknown
+2,ppr,0.50,10,15,Mr. Holland's Opus (1995),Drama,0.00040091827395372093,160,unknown
+1,mf,,1,169,"Wrong Trousers, The (1993)",Animation;Comedy,5.244039535522461,90,5
+1,mf,,2,408,"Close Shave, A (1995)",Animation;Comedy;Thriller,5.073599815368652,85,unknown
+1,mf,,3,483,Casablanca (1942),Drama;Romance;War,4.976754188537598,197,unknown
+1,mf,,4,511,Lawrence of Arabia (1962),Adventure;War,4.914538860321045,134,unknown
+1,mf,,5,1449,Pather Panchali (1955),Drama,4.8251237869262695,7,unknown
+1,mf,,6,484,"Maltese Falcon, The (1941)",Film-Noir;Mystery,4.775870323181152,91,unknown
+1,mf,,7,1142,When We Were Kings (1996),Documentary,4.748240947723389,29,unknown
+1,mf,,8,603,Rear Window (1954),Mystery;Thriller,4.703402996063232,152,unknown
+1,mf,,9,1558,Aparajito (1956),Drama,4.685331344604492,4,unknown
+1,mf,,10,357,One Flew Over the Cuckoo's Nest (1975),Drama,4.670327186584473,202,unknown
+2,mf,,1,694,Persuasion (1995),Romance,4.697005748748779,28,unknown
+2,mf,,2,483,Casablanca (1942),Drama;Romance;War,4.615306377410889,197,unknown
+2,mf,,3,211,M*A*S*H (1970),Comedy;War,4.597038269042969,131,unknown
+2,mf,,4,647,Ran (1985),Drama;War,4.587275981903076,51,unknown
+2,mf,,5,59,Three Colors: Red (1994),Drama,4.572126388549805,56,unknown
+2,mf,,6,1449,Pather Panchali (1955),Drama,4.5565643310546875,7,unknown
+2,mf,,7,513,"Third Man, The (1949)",Mystery;Thriller,4.549496650695801,63,unknown
+2,mf,,8,511,Lawrence of Arabia (1962),Adventure;War,4.529644966125488,134,unknown
+2,mf,,9,648,"Quiet Man, The (1952)",Comedy;Romance,4.522685527801514,41,unknown
+2,mf,,10,484,"Maltese Falcon, The (1941)",Film-Noir;Mystery,4.517760753631592,91,unknown

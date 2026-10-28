@@ -1,0 +1,59 @@
+{
+  "purpose": "Use this verified MF failure, root cause, fix and verification in the HW6 report discussion.",
+  "savedOn": "2026-10-27",
+  "userProvidedNarrative": {
+    "whatWasWrong": "MF produced nearly identical predictions close to the global mean rating mu, poorly distinguishing between users and movies.",
+    "rootCause": "MSE was averaged over the current mini-batch, while the L2 penalty was summed over all user and movie factors on every batch. With the configured coefficient, this imbalance suppressed factor learning.",
+    "whatWeFixed": "We averaged the L2 penalty over the user and movie factor rows involved in the current batch, aligning its scale with MSE.",
+    "verification": "21 PASS, 0 FAIL, 0 PENDING"
+  },
+  "implementation": {
+    "file": "script.js",
+    "function": "hw6MfBatchLoss",
+    "functionLine": 837,
+    "prediction": "mu + dot(userFactors[userId], itemFactors[movieId])",
+    "fixedObjective": "mean_batch((prediction - rating)^2) + 0.05 * mean_batch(||p_u||^2 + ||q_i||^2)",
+    "averagingUnit": "Observed ratings in the current batch. Gathered factor rows retain duplicate observation weighting; this is not a mean over unique users or unique movies.",
+    "unobservedPairs": "No rating target; unrelated factor rows do not contribute to this batch loss.",
+    "settings": {
+      "factors": 16,
+      "learningRate": 0.01,
+      "regularization": 0.05,
+      "batchSize": 512,
+      "epochs": 30,
+      "seed": 20261013
+    },
+    "meanTrainingRating": 3.5806026199776437
+  },
+  "verificationEvidence": {
+    "file": "results/users_1_2/experiment.json",
+    "field": "appSelfChecks",
+    "totals": {
+      "pass": 21,
+      "fail": 0,
+      "pending": 0
+    },
+    "regressionTestSource": "script.js:3525, runSelfChecks",
+    "regressionTestName": "MF loss: unrated factor rows have zero gradient and do not change the loss",
+    "regressionCheck": "Removing unrelated rows with large factor values leaves the loss unchanged; unused rows have zero gradients, observed rows have learning gradients; no retained tensors.",
+    "status": "Preserved evidence from the completed post-fix run; not a new test run in this save-only turn.",
+    "checkedBy": "agent; do not describe as student personal verification without confirmation"
+  },
+  "documentationEvidence": "readme.md, Local MF baseline",
+  "postFixModel": {
+    "epochs": 30,
+    "lr": 0.01,
+    "reg": 0.05,
+    "batchSize": 512,
+    "factors": 16,
+    "seed": 20261013,
+    "regularizationMode": "mean-observed-row-l2",
+    "checkpointEpoch": 4,
+    "validationRMSEDisplayed": 0.9779,
+    "validationRMSEDisplayDecimals": 4,
+    "backend": "webgl",
+    "model": "Standalone global-mean plus dot-product MF baseline; no completed Week-5 checkpoint available",
+    "selection": "Earliest epoch attaining the lowest validation RMSE out of 30 epochs; test not used"
+  },
+  "reportCaveat": "Use the current standalone MF baseline and its post-fix outputs. Do not reuse pre-fix MF evaluation metrics as current results."
+}

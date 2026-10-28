@@ -1,0 +1,192 @@
+{
+  "purpose": "Separate HW6 section 6.2 one-factor-at-a-time PPR demonstration",
+  "savedOn": "2026-10-27",
+  "settings": [
+    {
+      "setting": 1,
+      "label": "Baseline",
+      "user_id": 1,
+      "alpha": "0.85",
+      "mean_training_popularity": 245.5,
+      "zero_scores": 0,
+      "eligible_candidates": 1367,
+      "genre_counts": {
+        "Crime": 1,
+        "Drama": 7,
+        "Thriller": 3,
+        "Sci-Fi": 2,
+        "Romance": 3,
+        "War": 3,
+        "Horror": 1,
+        "Action": 3,
+        "Adventure": 1
+      },
+      "verification": {
+        "sameTop10Order": true,
+        "float64Iterations": 90,
+        "float64FinalResidual": 8.886552479835717e-07,
+        "maxAbsoluteScoreDifference": 1.0999649273021883e-09
+      }
+    },
+    {
+      "setting": 2,
+      "label": "Change user only",
+      "user_id": 2,
+      "alpha": "0.85",
+      "mean_training_popularity": 254.9,
+      "zero_scores": 0,
+      "eligible_candidates": 1556,
+      "genre_counts": {
+        "Action": 5,
+        "Adventure": 4,
+        "Romance": 2,
+        "Sci-Fi": 4,
+        "War": 3,
+        "Drama": 6,
+        "Thriller": 2,
+        "Crime": 1
+      },
+      "verification": {
+        "sameTop10Order": true,
+        "float64Iterations": 90,
+        "float64FinalResidual": 8.886552478670547e-07,
+        "maxAbsoluteScoreDifference": 4.5189681116032665e-09
+      }
+    },
+    {
+      "setting": 3,
+      "label": "Change alpha only",
+      "user_id": 1,
+      "alpha": "0.50",
+      "mean_training_popularity": 228.4,
+      "zero_scores": 0,
+      "eligible_candidates": 1367,
+      "genre_counts": {
+        "Crime": 1,
+        "Drama": 9,
+        "Thriller": 1,
+        "Sci-Fi": 3,
+        "Romance": 3,
+        "War": 3,
+        "Action": 1,
+        "Adventure": 1,
+        "Children's": 1,
+        "Fantasy": 1
+      },
+      "verification": {
+        "sameTop10Order": true,
+        "float64Iterations": 21,
+        "float64FinalResidual": 9.536743163312016e-07,
+        "maxAbsoluteScoreDifference": 4.0516192310879884e-10
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "baseline_setting": 1,
+      "compared_setting": 2,
+      "changed_factor": "user",
+      "baseline_mean_popularity": 245.5,
+      "compared_mean_popularity": 254.9,
+      "mean_popularity_difference": 9.4,
+      "shared_movies_count": 0,
+      "overlap_fraction": 0.0,
+      "shared_movie_ids": "",
+      "removed_movie_ids": "100;258;286;318;357;483;288;300;222;313",
+      "added_movie_ids": "181;98;174;7;56;117;172;9;121;64"
+    },
+    {
+      "baseline_setting": 1,
+      "compared_setting": 3,
+      "changed_factor": "alpha",
+      "baseline_mean_popularity": 245.5,
+      "compared_mean_popularity": 228.4,
+      "mean_popularity_difference": -17.1,
+      "shared_movies_count": 7,
+      "overlap_fraction": 0.7,
+      "shared_movie_ids": "100;222;258;286;318;357;483",
+      "removed_movie_ids": "288;300;313",
+      "added_movie_ids": "475;275;423"
+    }
+  ],
+  "observations": [
+    "Setting 1 vs 2: fixed alpha .85 and graph, user 1 to user 2; 0/10 shared movies; mean popularity 245.5 to 254.9. Per-user test filtering also changes; all ten user-2 movies are excluded for user 1.",
+    "Setting 1 vs 3: fixed user 1, graph and exclusions, alpha .85 to .50; 7/10 shared movies; mean popularity 245.5 to 228.4. Scream, Air Force One and Titanic leave; Trainspotting, Sense and Sensibility and E.T. enter.",
+    "The first six titles keep the same order when alpha changes. Star Trek: First Contact moves from rank 9 to rank 7.",
+    "For this user and graph, higher alpha gives the more popular of these two lists. This does not show that either list is better, or that alpha has a universal relationship with popularity.",
+    "Scores are long-run walk probabilities. Differences in score magnitudes across alpha settings are not changes in predicted rating or recommendation quality.",
+    "These are descriptive demonstrations. The primary final evaluation continues to use validation-selected alpha .50; the demonstrations do not select or replace it."
+  ],
+  "graph": {
+    "nodeCount": 2554,
+    "userCount": 943,
+    "movieCount": 1611,
+    "positiveUndirectedEdges": 45602,
+    "zeroDegreeUsers": 1,
+    "zeroDegreeMovies": 253,
+    "edgeSha256": "e49f80b9eba96f45300f4deb8e5b222ced6db294b70e9c142c2cad7ad32e0a24",
+    "edgeHashSerialization": "Distinct positive training (user_id,movie_id) pairs sorted ascending, each formatted user_id,movie_id plus LF",
+    "construction": "Binary bidirectional edges for training ratings >= 4.0; missing unobserved"
+  },
+  "splitCounts": {
+    "train": 79619,
+    "val": 9596,
+    "test": 10785
+  },
+  "testCohortSize": 861,
+  "bothUsersInTestCohort": true,
+  "filtering": "All 1,611 training-movie candidates; exclude every movie rated in training or validation for that user, regardless of rating value. Descending score, exact ties ascending movie ID.",
+  "crossUserFilteringContext": {
+    "setting1MoviesExcludedForUser2": [
+      100,
+      258,
+      286,
+      288,
+      300,
+      313
+    ],
+    "setting2MoviesExcludedForUser1": [
+      181,
+      98,
+      174,
+      7,
+      56,
+      117,
+      172,
+      9,
+      121,
+      64
+    ],
+    "note": "Each user has their own standard test exclusion set. All ten setting-2 movies were previously rated by user 1; zero overlap cannot establish a pure restart-seed effect or better personalization."
+  },
+  "finalEvaluation": {
+    "directory": "../users_1_2/",
+    "validationSelectedAlpha": 0.5,
+    "artifactsUnchanged": true,
+    "artifactSha256": {
+      "recommendations.csv": "28a59c01ec7b364990c30efd518118893936fb35129dc4a5abaa624ba9dd2e50",
+      "summary.csv": "6c6e8013ba438e68702355f4ef6bdcd6903f8af199aead89cb31ba4ace102911",
+      "index.html": "7193b3cc1096bac5229c474e80024cd2e899344ccc98476b60eba9d56cc8a530",
+      "experiment.json": "6ef0f2a999b01c911a25784d61b0fca7416694bff785718d7a89e2f58b287ea4"
+    },
+    "setting3MatchesFinalPprUser1MovieIdsAndExactScores": true
+  },
+  "tensorflowVersion": "4.22.0",
+  "backend": "webgl",
+  "sourceSha256": {
+    "data.js": "e20e9ff0d187c16326e67189db4f9f9198b138a96ddab0682d0b63f74e296483",
+    "graph.js": "33f59b55e5462813e754b7b65fd1fc7f26713b241481f6cb98a9e379a941c9f3",
+    "script.js": "a7a3140dbfae8d193a34f03d1be6312d7728cca0cd3269afc3e0d0852a2d1c89",
+    "u.item": "553841ebc7de3a0fd0d6b62a204ea30c1e651aacfb2814c7a6584ac52f2c5701",
+    "u.data": "06416e597f82b7342361e41163890c81036900f418ad91315590814211dca490"
+  },
+  "sourceExportSha256": "ada745dbb6002d875392b74e89fcf03b81a30d36a848ddbdefd90b44d1bd3804",
+  "browserDemoText": "One-factor-at-a-time demonstration (readme 6.2)\n\nUsers fixed and shown: 1, 2. Exactly one factor changes per comparison — never attribute a difference to a factor that was also changed.\n\nbaseline\n\nuser 1, alpha 0.85; changed: nothing (reference setting)\n\nFargo (1996) id 100, score 0.0027, pop 377\nContact (1997) id 258, score 0.0020, pop 307\nEnglish Patient, The (1996) id 286, score 0.0019, pop 279\nSchindler's List (1993) id 318, score 0.0016, pop 224\nOne Flew Over the Cuckoo's Nest (1975) id 357, score 0.0015, pop 202\nCasablanca (1942) id 483, score 0.0014, pop 197\nScream (1996) id 288, score 0.0014, pop 226\nAir Force One (1997) id 300, score 0.0014, pop 235\nStar Trek: First Contact (1996) id 222, score 0.0014, pop 189\nTitanic (1997) id 313, score 0.0013, pop 219\nchange seed only\n\nuser 2, alpha 0.85; changed: restart user only\n\nReturn of the Jedi (1983) id 181, score 0.0026, pop 339\nSilence of the Lambs, The (1991) id 98, score 0.0020, pop 308\nRaiders of the Lost Ark (1981) id 174, score 0.0020, pop 312\nTwelve Monkeys (1995) id 7, score 0.0018, pop 234\nPulp Fiction (1994) id 56, score 0.0017, pop 263\nRock, The (1996) id 117, score 0.0017, pop 215\nEmpire Strikes Back, The (1980) id 172, score 0.0017, pop 261\nDead Man Walking (1995) id 9, score 0.0016, pop 182\nIndependence Day (ID4) (1996) id 121, score 0.0016, pop 207\nShawshank Redemption, The (1994) id 64, score 0.0015, pop 228\nchange alpha only\n\nuser 1, alpha 0.50; changed: alpha only\n\nFargo (1996) id 100, score 0.0007, pop 377\nContact (1997) id 258, score 0.0004, pop 307\nEnglish Patient, The (1996) id 286, score 0.0004, pop 279\nSchindler's List (1993) id 318, score 0.0004, pop 224\nOne Flew Over the Cuckoo's Nest (1975) id 357, score 0.0004, pop 202\nCasablanca (1942) id 483, score 0.0004, pop 197\nStar Trek: First Contact (1996) id 222, score 0.0003, pop 189\nTrainspotting (1996) id 475, score 0.0003, pop 164\nSense and Sensibility (1995) id 275, score 0.0003, pop 178\nE.T. the Extra-Terrestrial (1982) id 423, score 0.0003, pop 167\n\nCommon movies between lists: baseline vs change seed only: 0 common of top 10; baseline vs change alpha only: 7 common of top 10; change seed only vs change alpha only: 0 common of top 10. Descriptive evidence only, not proof of better personalization.",
+  "verification": {
+    "allThirtyRowsEligible": true,
+    "allMetadataAndPopularityMatchRawFiles": true,
+    "independentFloat64Top10OrdersMatch": true,
+    "allListsHaveTenPositiveScores": true,
+    "checkingPerformedBy": "agent; no student personal verification claimed"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "sourceDirectory": "/Users/raimova-al/Documents/study/master/res_sys/llm-4-res-sys/week6",
+  "sourceSha256": {
+    "data.js": "e20e9ff0d187c16326e67189db4f9f9198b138a96ddab0682d0b63f74e296483",
+    "graph.js": "33f59b55e5462813e754b7b65fd1fc7f26713b241481f6cb98a9e379a941c9f3",
+    "script.js": "a7a3140dbfae8d193a34f03d1be6312d7728cca0cd3269afc3e0d0852a2d1c89",
+    "u.data": "06416e597f82b7342361e41163890c81036900f418ad91315590814211dca490",
+    "u.item": "553841ebc7de3a0fd0d6b62a204ea30c1e651aacfb2814c7a6584ac52f2c5701"
+  },
+  "instrumentation": "The batch function was extracted verbatim from graph.js, renamed workedPprBatchTraced, and given one synchronous read-only observer immediately before its original return of next/residual. Propagation, normalization, column freezing and stopping arithmetic are unchanged. The original uninstrumented function is run alongside it and compared over every returned probability.",
+  "sourceRefs": {
+    "splitByTimestamp": {
+      "file": "data.js",
+      "line": 145
+    },
+    "buildGraph": {
+      "file": "graph.js",
+      "line": 359
+    },
+    "rowNormalize": {
+      "file": "graph.js",
+      "line": 435
+    },
+    "personalizedPageRankBatch": {
+      "file": "graph.js",
+      "line": 588
+    },
+    "graphCorrectPartitionMass": {
+      "file": "graph.js",
+      "line": 730
+    },
+    "hw6BuildSplitIndices": {
+      "file": "script.js",
+      "line": 577
+    },
+    "hw6ExclusionSet": {
+      "file": "script.js",
+      "line": 678
+    },
+    "hw6SharedCohort": {
+      "file": "script.js",
+      "line": 704
+    },
+    "recommendTopK": {
+      "file": "script.js",
+      "line": 1197
+    },
+    "recallAtK": {
+      "file": "script.js",
+      "line": 1250
+    }
+  }
+}

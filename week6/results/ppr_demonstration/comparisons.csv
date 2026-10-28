@@ -1,0 +1,3 @@
+baseline_setting,compared_setting,changed_factor,baseline_mean_popularity,compared_mean_popularity,mean_popularity_difference,shared_movies_count,overlap_fraction,shared_movie_ids,removed_movie_ids,added_movie_ids
+1,2,user,245.5,254.9,9.4,0,0.0,,100;258;286;318;357;483;288;300;222;313,181;98;174;7;56;117;172;9;121;64
+1,3,alpha,245.5,228.4,-17.1,7,0.7,100;222;258;286;318;357;483,288;300;313,475;275;423

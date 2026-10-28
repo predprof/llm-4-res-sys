@@ -1,0 +1,5 @@
+method,alpha,user_a_id,user_b_id,user_a_mean_training_popularity,user_b_mean_training_popularity,shared_movies_count,shared_movie_ids
+popularity,,1,2,246.8,262.1,1,318
+pagerank,0.50,1,2,239.4,247.4,1,222
+ppr,0.50,1,2,228.4,226.7,1,475
+mf,,1,2,99.1,79.9,4,483;484;511;1449

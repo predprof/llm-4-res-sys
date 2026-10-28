@@ -1,0 +1,121 @@
+{
+  "source": "Preserved post-fix harness run in results/users_1_2/experiment.json, appSelfChecks; no new harness execution is claimed here",
+  "backend": "webgl",
+  "passed": 21,
+  "failed": 0,
+  "pending": 0,
+  "checks": [
+    {
+      "name": "reference graph: uniform alpha=0.85 matches readme 4.1 values",
+      "status": "PASS",
+      "detail": "C>A>B>D; produced by student pageRank(alpha, {transition: REFERENCE_GRAPH.transition}), iterations 28"
+    },
+    {
+      "name": "reference graph: restart at A alpha=0.85 matches readme 4.1 values",
+      "status": "PASS",
+      "detail": "A>C>B>D (D stays 0); produced by student personalizedPageRank(seedNode, alpha, {transition: REFERENCE_GRAPH.transition})"
+    },
+    {
+      "name": "row normalization: every nonzero-degree row sums to 1",
+      "status": "PASS",
+      "detail": "6 positive-degree row(s) sum to 1; 2 dangling row(s) are zero"
+    },
+    {
+      "name": "restart distributions: nonnegative and summing to 1",
+      "status": "PASS",
+      "detail": "uniform + one-hot over 4 nodes"
+    },
+    {
+      "name": "iterations preserve total probability (sum approx 1)",
+      "status": "PASS",
+      "detail": "sum = 1.0000000596 over 3 synthetic nodes (graph.js)"
+    },
+    {
+      "name": "stationary scores are nonnegative",
+      "status": "PASS",
+      "detail": "3 scores nonnegative (graph.js)"
+    },
+    {
+      "name": "one extra update produces approximately the same distribution",
+      "status": "PASS",
+      "detail": "L1 = 8.017e-7"
+    },
+    {
+      "name": "zero-degree node fixture preserves probability mass",
+      "status": "PASS",
+      "detail": "danglingMask [false,true,false,false,true]; mass 0.99999997 / 1.00000000"
+    },
+    {
+      "name": "matrix orientation: probability collects at the pointed-to node, not the source",
+      "status": "PASS",
+      "detail": "p = [0.486487, 0.256757, 0.256757]"
+    },
+    {
+      "name": "three outgoing links: each gets probability 1/3",
+      "status": "PASS",
+      "detail": "three movie links receive 1/3 each; their sole return link receives 1"
+    },
+    {
+      "name": "PPR: mapped user restart, alpha=0 and isolated-user mass",
+      "status": "PASS",
+      "detail": "user 42 maps to node 1; an isolated seed retains all mass; alpha=0 uses only restart"
+    },
+    {
+      "name": "iteration cap: report nonconvergence unless tolerance was met",
+      "status": "PASS",
+      "detail": "capped alpha=0.85 is not converged; alpha=0 is already stationary"
+    },
+    {
+      "name": "repeated PageRank/PPR runs: no retained tensors",
+      "status": "PASS",
+      "detail": "live tensors before/after six runs: 2/2"
+    },
+    {
+      "name": "recommendTopK: excludes previously rated movies and breaks ties by ascending id",
+      "status": "PASS",
+      "detail": "10 eligible items for user 1"
+    },
+    {
+      "name": "movieScores: returns movie probabilities in mapping order",
+      "status": "PASS",
+      "detail": "user nodes excluded; explicit node mapping respected"
+    },
+    {
+      "name": "recallAtK: macro average, split exclusions, unseen IDs and empty cohort",
+      "status": "PASS",
+      "detail": "test mean(2/3,0)=1/3; validation recall=1; one unseen ID excluded; empty cohort=0"
+    },
+    {
+      "name": "batched PPR: single-user parity, dangling restart and tensor cleanup",
+      "status": "PASS",
+      "detail": "12 user/alpha cases agree with single-user PPR; isolated seeds preserve mass; no retained tensors; 0 capped fixture cases correctly reported as nonconverged"
+    },
+    {
+      "name": "graph mapping: node count equals observed users plus observed movies",
+      "status": "PASS",
+      "detail": "2554 nodes = 943 users + 1611 movies"
+    },
+    {
+      "name": "buildGraph: training positives only, binary edges and zero-degree nodes",
+      "status": "PASS",
+      "detail": "2 unique positive pairs; absent and sub-threshold ratings add no edge; both zero-degree nodes retained"
+    },
+    {
+      "name": "MF loss: unrated factor rows have zero gradient and do not change the loss",
+      "status": "PASS",
+      "detail": "unused rows with large factors do not affect loss or gradients; observed rows learn"
+    },
+    {
+      "name": "public surface: every required name is defined",
+      "status": "PASS",
+      "detail": "10 functions + ALPHA_GRID + MF_INFO"
+    }
+  ],
+  "sourceSha256": {
+    "data.js": "e20e9ff0d187c16326e67189db4f9f9198b138a96ddab0682d0b63f74e296483",
+    "graph.js": "33f59b55e5462813e754b7b65fd1fc7f26713b241481f6cb98a9e379a941c9f3",
+    "script.js": "a7a3140dbfae8d193a34f03d1be6312d7728cca0cd3269afc3e0d0852a2d1c89",
+    "u.item": "553841ebc7de3a0fd0d6b62a204ea30c1e651aacfb2814c7a6584ac52f2c5701",
+    "u.data": "06416e597f82b7342361e41163890c81036900f418ad91315590814211dca490"
+  }
+}

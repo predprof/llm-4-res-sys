@@ -1,0 +1,31 @@
+setting,user_id,method,alpha,rank,movie_id,title,genres,score,training_popularity,held_out_test_rating
+1,1,ppr,0.85,1,100,Fargo (1996),Crime;Drama;Thriller,0.0027416793163865805,377,5
+1,1,ppr,0.85,2,258,Contact (1997),Drama;Sci-Fi,0.002001957967877388,307,5
+1,1,ppr,0.85,3,286,"English Patient, The (1996)",Drama;Romance;War,0.001873535686172545,279,unknown
+1,1,ppr,0.85,4,318,Schindler's List (1993),Drama;War,0.0016319339629262686,224,unknown
+1,1,ppr,0.85,5,357,One Flew Over the Cuckoo's Nest (1975),Drama,0.0014931035693734884,202,unknown
+1,1,ppr,0.85,6,483,Casablanca (1942),Drama;Romance;War,0.001444634748622775,197,unknown
+1,1,ppr,0.85,7,288,Scream (1996),Horror;Thriller,0.0014287247322499752,226,unknown
+1,1,ppr,0.85,8,300,Air Force One (1997),Action;Thriller,0.0014131037751212716,235,unknown
+1,1,ppr,0.85,9,222,Star Trek: First Contact (1996),Action;Adventure;Sci-Fi,0.001352945459075272,189,4
+1,1,ppr,0.85,10,313,Titanic (1997),Action;Drama;Romance,0.001318331342190504,219,unknown
+2,2,ppr,0.85,1,181,Return of the Jedi (1983),Action;Adventure;Romance;Sci-Fi;War,0.002600749721750617,339,unknown
+2,2,ppr,0.85,2,98,"Silence of the Lambs, The (1991)",Drama;Thriller,0.0020272971596568823,308,unknown
+2,2,ppr,0.85,3,174,Raiders of the Lost Ark (1981),Action;Adventure,0.0019665774889290333,312,unknown
+2,2,ppr,0.85,4,7,Twelve Monkeys (1995),Drama;Sci-Fi,0.0017902936087921262,234,unknown
+2,2,ppr,0.85,5,56,Pulp Fiction (1994),Crime;Drama,0.0017448203871026635,263,unknown
+2,2,ppr,0.85,6,117,"Rock, The (1996)",Action;Adventure;Thriller,0.0016845932696014643,215,unknown
+2,2,ppr,0.85,7,172,"Empire Strikes Back, The (1980)",Action;Adventure;Drama;Romance;Sci-Fi;War,0.0016606280114501715,261,unknown
+2,2,ppr,0.85,8,9,Dead Man Walking (1995),Drama,0.0016079518245533109,182,unknown
+2,2,ppr,0.85,9,121,Independence Day (ID4) (1996),Action;Sci-Fi;War,0.001602756790816784,207,unknown
+2,2,ppr,0.85,10,64,"Shawshank Redemption, The (1994)",Drama,0.001517180702649057,228,unknown
+3,1,ppr,0.50,1,100,Fargo (1996),Crime;Drama;Thriller,0.0006855214014649391,377,5
+3,1,ppr,0.50,2,258,Contact (1997),Drama;Sci-Fi,0.00043986731907352805,307,5
+3,1,ppr,0.50,3,286,"English Patient, The (1996)",Drama;Romance;War,0.0004310201038606465,279,unknown
+3,1,ppr,0.50,4,318,Schindler's List (1993),Drama;War,0.000403817743062973,224,unknown
+3,1,ppr,0.50,5,357,One Flew Over the Cuckoo's Nest (1975),Drama,0.00037716736551374197,202,unknown
+3,1,ppr,0.50,6,483,Casablanca (1942),Drama;Romance;War,0.000359690428012982,197,unknown
+3,1,ppr,0.50,7,222,Star Trek: First Contact (1996),Action;Adventure;Sci-Fi,0.00033278638147749007,189,4
+3,1,ppr,0.50,8,475,Trainspotting (1996),Drama,0.0003280910896137357,164,unknown
+3,1,ppr,0.50,9,275,Sense and Sensibility (1995),Drama;Romance,0.00032018584897741675,178,unknown
+3,1,ppr,0.50,10,423,E.T. the Extra-Terrestrial (1982),Children's;Drama;Fantasy;Sci-Fi,0.0003056690620724112,167,unknown

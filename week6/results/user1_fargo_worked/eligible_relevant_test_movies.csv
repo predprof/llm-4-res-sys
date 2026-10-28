@@ -1,0 +1,20 @@
+movie_id,title,test_rating,timestamp,u_data_line,in_candidate_pool,excluded,hit
+6,Shanghai Triad (Yao a yao yao dao waipo qiao) (1995),5,887431973,5534,True,False,False
+18,"White Balloon, The (1995)",4,887432020,87832,True,False,False
+20,Angels and Insects (1995),4,887431883,479,True,False,False
+32,Crumb (1994),5,888732909,25256,True,False,False
+100,Fargo (1996),5,878543541,17673,True,False,True
+111,"Truth About Cats & Dogs, The (1996)",5,889751711,88260,True,False,False
+129,Bound (1996),5,887431908,13639,True,False,False
+154,Monty Python's Life of Brian (1979),5,878543541,18305,True,False,False
+169,"Wrong Trousers, The (1993)",5,878543541,42457,True,False,False
+171,Delicatessen (1991),5,889751711,688,True,False,False
+178,12 Angry Men (1957),5,878543541,47540,True,False,False
+209,This Is Spinal Tap (1984),4,888732908,8738,True,False,False
+221,Breaking the Waves (1996),5,887431921,3432,True,False,False
+222,Star Trek: First Contact (1996),4,878873388,1300,True,False,True
+228,Star Trek: The Wrath of Khan (1982),5,878543541,3060,True,False,False
+242,Kolya (1996),5,889751633,10923,True,False,False
+256,When the Cats Away (Chacun cherche son chat) (1996),4,889751712,30480,True,False,False
+258,Contact (1997),5,878873389,6542,True,False,True
+270,Gattaca (1997),5,888732827,27217,True,False,False
